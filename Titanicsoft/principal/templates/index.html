@@ -1,3 +1,36 @@
 <!-- <a href="cuentas/registro">Registrate</a> -->
 <br>
 <a href="cuentas/login">Login</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>usuario</td>
+            <td>nombre</td>
+            <td>precio</td>
+            <td>ancho</td>
+            <td>alto</td>
+            <td>grosor</td>
+            <td>peso</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if paquetes %}
+            {% for paquete in paquetes %}
+            <tr>
+                <td>{{ paquete.id }}</td>
+                <td>{{ paquete.user }}</td>
+                <td>{{ paquete.nombre }}</td>
+                <td>{{ paquete.precio }}</td>
+                <td>{{ paquete.ancho }}</td>
+                <td>{{ paquete.alto }}</td>
+                <td>{{ paquete.grosor }}</td>
+                <td>{{ paquete.peso }}</td>
+                <td> <a href="paquete/cotizar/{{paquete.id}}">Cotizar</a></td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+        
+    </tbody>
+</table>

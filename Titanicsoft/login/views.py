@@ -20,14 +20,13 @@ class customer_register(CreateView):
 
 class business_register(CreateView):
     model = User
-    form_class = BusinessSignUpForm
+    form_class = BusinessSign UpForm
     template_name = 'business_register.html'
 
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
         return redirect('/')
-
 
 def login_request(request):
     if request.method=='POST':
@@ -43,7 +42,7 @@ def login_request(request):
                 messages.error(request,"Invalid username or password")
         else:
                 messages.error(request,"Invalid username or password")
-    return render(request, '../templates/login.html',
+    return render(request, 'login.html',
     context={'form':AuthenticationForm()})
 
 def logout_view(request):

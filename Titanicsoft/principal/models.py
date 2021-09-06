@@ -10,7 +10,7 @@ class Paquete(models.Model):
     alto   = models.FloatField()
     grosor = models.FloatField()
     peso   = models.FloatField()
-    -
+    
 
     def detalles_paquete(self):
         return "{}: {} ".format(self.user , self.nombre)
